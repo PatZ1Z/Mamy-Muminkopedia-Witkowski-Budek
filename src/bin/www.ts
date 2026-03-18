@@ -3,20 +3,43 @@
 import  app from '../app';
 import debug from 'debug';
 import http from 'http';
+import dotenv from "dotenv";
+import connectDB from "../config/db";
 
-// Get port from environment and store in Express.
+dotenv.config()
+
+/**
+ * Get port from environment and store in Express.
+ */
+
 const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
-const debugLog = debug("express-ts-mongodb:server"); // Tworzy instancję loggera
+/**
+ * Create HTTP server.
+ */
 
-// Create HTTP server.
 const server = http.createServer(app);
 
-// Listen on provided port, on all network interfaces.
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+/**
+ * Connect to MongoDB
+ */
+
+
+
+const start = async () => {
+  try{
+    await connectDB();
+    server.listen(port);
+    server.on('error', onError);
+    server.on('listening', onListening);
+  }catch(error){
+    console.error("Error connecting to MongoDB: ", error);
+    process.exit(1);
+  }
+}
+
+start()
 
 // Normalize a port into a number, string, or false.
 function normalizePort(val: string): number | string | false {
