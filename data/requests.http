@@ -1,0 +1,60 @@
+@baseUrl = https://localhost:3000
+
+### GET all
+GET {{baseUrl}}/characters
+
+### GET Character by id
+GET {{baseUrl}}/characters/:id
+
+### GET Artifact by id
+GET {{baseUrl}}/artifacts/:id
+
+
+
+### POST new Character
+POST {{baseUrl}}/characters
+
+{
+    "name": "Muminek",
+    "description": "Dobroduszny, ciekawski i wrażliwy mieszkaniec Doliny Muminków, znany ze swojego optymizmu i gościnności.",
+    "species": "Muminek",
+    "status": "aktywny",
+    "friends": [
+      "Ryjek",
+      "Włóczykij",
+      "Mała Mi",
+      "Mama Muminka",
+      "Tata Muminka"
+    ]
+}
+
+### POST new Artifact
+POST {{baseUrl}}/artifacts
+
+{
+    "name": "Lśniący Kompas Włóczykija",
+    "description": "Stary, mosiężny kompas, który podobno wskazuje nie tylko kierunek geograficzny, ale także drogę do miejsc, gdzie można odnaleźć spokój. Delikatnie świeci, gdy jego właściciel jest blisko czegoś ważnego.",
+    "owner": "Włóczykij"
+}
+
+
+
+### PUT Character (unfinshed)
+PUT {{baseUrl}}/characters/:id
+
+{
+}
+
+### PUT Artifact (unfinshed)
+PUT {{baseUrl}}/artifacts/:id
+
+{
+}
+
+
+
+### DELETE Character
+DELETE {{baseUrl}}/characters/:id
+
+### DELETE Character
+DELETE {{baseUrl}}/artifacts/:id
