@@ -1,1 +1,0 @@
-export type Status = "sen zimowy" | "aktywny";

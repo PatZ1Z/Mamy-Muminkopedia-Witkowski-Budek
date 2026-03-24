@@ -1,12 +1,11 @@
 import mongoose, { Document } from "mongoose";
-import {Status} from "./status";
 import Character from "./Character";
 
 export interface Character extends Document {
     name: string;
     description: string;
     species: string;
-    status: Status;
+    status: string;
     friends: string[];
 }
 
