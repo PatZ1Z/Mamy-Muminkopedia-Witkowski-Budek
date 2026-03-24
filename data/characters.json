@@ -1,0 +1,44 @@
+[
+    {
+      "name": "Muminek",
+      "description": "Ciekawski, serdeczny i zawsze gotowy pomagać innym mieszkaniec Doliny Muminków.",
+      "species": "Muminek",
+      "status": "aktywny",
+      "friends": ["Ryjek", "Włóczykij", "Mała Mi", "Mama Muminka", "Tata Muminka"]
+    },
+    {
+      "name": "Mama Muminka",
+      "description": "Opiekuńcza, spokojna i praktyczna. Zawsze ma przy sobie torebkę i potrafi stworzyć domową atmosferę w każdych warunkach.",
+      "species": "Muminek",
+      "status": "aktywny",
+      "friends": ["Muminek", "Tata Muminka", "Ryjek"]
+    },
+    {
+      "name": "Tata Muminka",
+      "description": "Filozoficzny, nieco marzycielski i dumny ojciec. Uwielbia pisać pamiętniki i wspominać dawne przygody.",
+      "species": "Muminek",
+      "status": "aktywny",
+      "friends": ["Mama Muminka", "Muminek", "Włóczykij"]
+    },
+    {
+      "name": "Włóczykij",
+      "description": "Wędrowiec i wolny duch. Ceni samotność, ale jest wiernym przyjacielem Muminka.",
+      "species": "Włóczykij",
+      "status": "wędruje",
+      "friends": ["Muminek", "Ryjek"]
+    },
+    {
+      "name": "Ryjek",
+      "description": "Nerwowy, ale lojalny przyjaciel Muminka. Lubi kolekcjonować rzeczy i martwić się na zapas.",
+      "species": "Ryjek",
+      "status": "aktywny",
+      "friends": ["Muminek", "Włóczykij"]
+    },
+    {
+      "name": "Mała Mi",
+      "description": "Zadziorna, odważna i bezpośrednia. Mówi to, co myśli, i nie boi się żadnych przygód.",
+      "species": "Mi",
+      "status": "aktywny",
+      "friends": ["Muminek", "Mama Muminka"]
+    }
+]
