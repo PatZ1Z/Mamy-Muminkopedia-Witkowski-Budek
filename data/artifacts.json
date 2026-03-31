@@ -1,0 +1,32 @@
+[
+    {
+      "name": "Lśniący Kompas Włóczykija",
+      "description": "Mosiężny kompas, który wskazuje nie tylko kierunek, ale także miejsca ważne dla wędrowca.",
+      "owner": "Włóczykij"
+    },
+    {
+      "name": "Torebka Mamy Muminka",
+      "description": "Niezwykle pojemna torebka, w której zawsze znajduje się dokładnie to, czego potrzeba.",
+      "owner": "Mama Muminka"
+    },
+    {
+      "name": "Pamiętnik Taty Muminka",
+      "description": "Gruby zeszyt pełen wspomnień, filozoficznych przemyśleń i opisów dawnych przygód.",
+      "owner": "Tata Muminka"
+    },
+    {
+      "name": "Szklana Kula Ryjka",
+      "description": "Delikatna, błyszcząca kula, którą Ryjek znalazł przypadkiem i od tamtej pory uważa za swój największy skarb.",
+      "owner": "Ryjek"
+    },
+    {
+      "name": "Igła Małej Mi",
+      "description": "Niewielka, ale ostra igła, którą Mała Mi nosi przy sobie — podobno do szycia, ale nikt nie jest tego pewien.",
+      "owner": "Mała Mi"
+    },
+    {
+      "name": "Muszelka Muminka",
+      "description": "Muszla znaleziona na plaży, która wydaje dźwięk przypominający szum Doliny Muminków.",
+      "owner": "Muminek"
+    }
+]
