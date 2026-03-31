@@ -1,13 +1,14 @@
 import express from "express";
+import {deleteCharacter, getCharacters, postCharacter, putCharacter} from "../controllers/character.controller";
 
-const router = express.Router();
-//do zrobienia
-/*router.get('/', getTasks);
+const characterRouter = express.Router();
 
-router.post('/', postTask);
+characterRouter.get('/', getCharacters);
 
-router.put('/:id', putTask);
+characterRouter.post('/', postCharacter);
 
-router.delete('/:id', deleteTask);*/
+characterRouter.put('/:id', putCharacter);
 
-export default router;
+characterRouter.delete('/:id', deleteCharacter);
+
+export default characterRouter;

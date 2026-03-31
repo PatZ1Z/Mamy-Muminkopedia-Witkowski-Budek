@@ -4,36 +4,36 @@ import {addCharacter, fetchCharacters, modifyCharacterById, removeCharacter} fro
 
 
 
-export async function getTasks(req: Request, res: Response): Promise<void> {
+export async function getCharacters(req: Request, res: Response): Promise<void> {
     try{
-        const tasks = await fetchCharacters()
-        res.status(200).json(tasks)
+        const characters = await fetchCharacters()
+        res.status(200).json(characters)
 
     }catch(err){
         res.status(500).send({error: err});
     }
 }
 
-export async function postTask(req: Request, res: Response): Promise<void> {
+export async function postCharacter(req: Request, res: Response): Promise<void> {
     try{
         const {name, description, species, status, friends} = req.body;
         const newCharacter = await addCharacter(name, description, species, status, friends);
         res.status(201).json({message: `Dodano nową postać ${newCharacter}`});
     }catch(err){
         const errorMessage = err instanceof Error ? err.message : "Unknown error.";
-        res.status(400).json({error: `Nie udało się dodać zadania ${errorMessage}`});
+        res.status(400).json({error: `Nie udało się dodać postaci ${errorMessage}`});
     }
 }
 
-export async function putTask(req: Request, res: Response): Promise<void> {
+export async function putCharacter(req: Request, res: Response): Promise<void> {
     try{
         const id = req.params.id as string;
         const updatedData = req.body;
-        const updatedTask = await modifyCharacterById(id, updatedData);
-        res.status(404).json({message: `Dodano nowe zadanie ${id}`});
+        const updatedCharacter = await modifyCharacterById(id, updatedData);
+        res.status(404).json({message: `Dodano nową postać ${id}`});
     }catch(err){
         const errorMessage = err instanceof Error ? err.message : "Unknown error.";
-        if(errorMessage === "Task not found"){
+        if(errorMessage === "Character not found"){
             res.status(400).json({error: errorMessage});
         }else{
             res.status(500).json({error: "Nie udało się z niewiadomych przyczyn"});
@@ -42,12 +42,12 @@ export async function putTask(req: Request, res: Response): Promise<void> {
 
 }
 
-export async function deleteTask(req: Request, res: Response): Promise<void> {
+export async function deleteCharacter(req: Request, res: Response): Promise<void> {
     try{
         const id = req.params.id as string;
-        const deletedTask = await removeCharacter(id)
+        const deletedCharacter = await removeCharacter(id)
 
-        res.status(200).json({message: `usunięto zadanie`, task: deletedTask});
+        res.status(200).json({message: `usunięto postać`, task: deletedCharacter});
 
     }catch(err){
         const error = err instanceof Error ? err : new Error("Unknown error");
@@ -55,7 +55,7 @@ export async function deleteTask(req: Request, res: Response): Promise<void> {
         if(error.message === "Task not found"){
             res.status(404).json({error: error.message});
         }else{
-            res.status(500).json({error: "Nie udało się usunąć zadania"});
+            res.status(500).json({error: "Nie udało się usunąć postaci"});
         }
     }
 }

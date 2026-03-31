@@ -5,8 +5,8 @@ export async function getAllCharacters(): Promise<Character[]> {
 }
 
 export async function createCharacter(name: string, description:string, species:string, status: string, friends: string[]): Promise<Character> {
-    const newTask = new CharacterModel({name, description, species, status, friends});
-    return newTask.save();
+    const newCharacter = new CharacterModel({name, description, species, status, friends});
+    return newCharacter.save();
 }
 
 export async function updateCharacterById(id: string, updateData: Partial<Character>): Promise<Character | null> {
