@@ -30,7 +30,7 @@ export async function putCharacter(req: Request, res: Response): Promise<void> {
         const id = req.params.id as string;
         const updatedData = req.body;
         const updatedCharacter = await modifyCharacterById(id, updatedData);
-        res.status(404).json({message: `Dodano nową postać ${id}`});
+        res.status(404).json({message: `Zaktualizowano postać ${id}`});
     }catch(err){
         const errorMessage = err instanceof Error ? err.message : "Unknown error.";
         if(errorMessage === "Character not found"){

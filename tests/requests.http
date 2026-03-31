@@ -1,18 +1,26 @@
-@baseUrl = https://localhost:3000
+@baseUrl = http://localhost:5000
 
-### GET all
+### GET all characters
 GET {{baseUrl}}/characters
+Content-Type: application/json
 
 ### GET Character by id
 GET {{baseUrl}}/characters/:id
+Content-Type: application/json
+
+### GET all artifacts
+GET {{baseUrl}}/artifacts
+Content-Type: application/json
 
 ### GET Artifact by id
 GET {{baseUrl}}/artifacts/:id
+Content-Type: application/json
 
 
 
 ### POST new Character
 POST {{baseUrl}}/characters
+Content-Type: application/json
 
 {
     "name": "Muminek",
@@ -30,6 +38,7 @@ POST {{baseUrl}}/characters
 
 ### POST new Artifact
 POST {{baseUrl}}/artifacts
+Content-Type: application/json
 
 {
     "name": "Lśniący Kompas Włóczykija",
@@ -41,12 +50,14 @@ POST {{baseUrl}}/artifacts
 
 ### PUT Character (unfinshed)
 PUT {{baseUrl}}/characters/:id
+Content-Type: application/json
 
 {
 }
 
 ### PUT Artifact (unfinshed)
 PUT {{baseUrl}}/artifacts/:id
+Content-Type: application/json
 
 {
 }
@@ -55,6 +66,8 @@ PUT {{baseUrl}}/artifacts/:id
 
 ### DELETE Character
 DELETE {{baseUrl}}/characters/:id
+Content-Type: application/json
 
 ### DELETE Character
 DELETE {{baseUrl}}/artifacts/:id
+Content-Type: application/json
