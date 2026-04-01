@@ -41,9 +41,9 @@ POST {{baseUrl}}/artifacts
 Content-Type: application/json
 
 {
-    "name": "Lśniący Kompas Włóczykija",
+    "name": "Lśniący Kompas Muminka",
     "description": "Stary, mosiężny kompas, który podobno wskazuje nie tylko kierunek geograficzny, ale także drogę do miejsc, gdzie można odnaleźć spokój. Delikatnie świeci, gdy jego właściciel jest blisko czegoś ważnego.",
-    "owner": "Włóczykij"
+    "owner": "Muminek"
 }
 
 
@@ -65,9 +65,9 @@ Content-Type: application/json
 
 
 ### DELETE Character
-DELETE {{baseUrl}}/characters/:id
+DELETE {{baseUrl}}/characters/69cbbd9998e28722fb12458a
 Content-Type: application/json
 
-### DELETE Character
+### DELETE Artifact
 DELETE {{baseUrl}}/artifacts/:id
 Content-Type: application/json

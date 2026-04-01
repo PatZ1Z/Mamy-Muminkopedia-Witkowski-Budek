@@ -1,9 +1,19 @@
 import {Character} from "../models/Character";
-import {createCharacter, deleteCharacterById, getAllCharacters, updateCharacterById} from "../repositories/character.repo";
+import {
+    createCharacter,
+    deleteCharacterById,
+    getAllCharacters,
+    getOneCharacter,
+    updateCharacterById
+} from "../repositories/character.repo";
 
 
 export async function fetchCharacters(): Promise<Character[]> {
     return await getAllCharacters()
+}
+
+export async function fetchOneCharacter(id:string): Promise<Character | null> {
+    return await getOneCharacter(id)
 }
 
 export async function addCharacter(name: string, description:string, species:string, status: string, friends: string[]):Promise<Character> {

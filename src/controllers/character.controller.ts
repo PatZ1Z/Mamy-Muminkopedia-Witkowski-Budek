@@ -1,6 +1,15 @@
 
 import {Request, Response} from 'express'
-import {addCharacter, fetchCharacters, modifyCharacterById, removeCharacter} from "../services/character.service";
+import {
+    addCharacter,
+    fetchCharacters,
+    fetchOneCharacter,
+    modifyCharacterById,
+    removeCharacter
+} from "../services/character.service";
+import {fetchArtifacts, removeArtifact} from "../services/artifact.service";
+import {Character} from "../models/Character";
+import { deleteArtifactsByOwner } from "../services/artifact.service";
 
 
 
@@ -13,6 +22,8 @@ export async function getCharacters(req: Request, res: Response): Promise<void> 
         res.status(500).send({error: err});
     }
 }
+
+
 
 export async function postCharacter(req: Request, res: Response): Promise<void> {
     try{
@@ -43,19 +54,26 @@ export async function putCharacter(req: Request, res: Response): Promise<void> {
 }
 
 export async function deleteCharacter(req: Request, res: Response): Promise<void> {
-    try{
+    try {
         const id = req.params.id as string;
-        const deletedCharacter = await removeCharacter(id)
 
-        res.status(200).json({message: `usunięto postać`, task: deletedCharacter});
+        const deletedCharacter = await removeCharacter(id);
 
-    }catch(err){
+        const deletedCount = await deleteArtifactsByOwner(deletedCharacter.name);
+
+        res.status(200).json({
+            message: `Usunięto postać i jej ${deletedCount} artefaktów`,
+            character: deletedCharacter
+        });
+
+
+    } catch (err) {
         const error = err instanceof Error ? err : new Error("Unknown error");
 
-        if(error.message === "Task not found"){
-            res.status(404).json({error: error.message});
-        }else{
-            res.status(500).json({error: "Nie udało się usunąć postaci"});
+        if (error.message === "Character not found") {
+            res.status(404).json({ error: error.message });
+        } else {
+            res.status(500).json({ error: "Nie udało się usunąć postaci" });
         }
     }
 }
